@@ -1,8 +1,8 @@
 
 <body >
              <div class="py-3 fixed top-0 left-0 w-full z-50 bg-white text-black flex items-center justify-between   font-medium  shadow ">
-               <div class="flex justify-start items-center w-[70%] gap-x-7 ">
-                 <a href="/listings"><i class="fa-regular fa-compass text-[40px] text-pink-600 "></i></a>
+               <div class="flex justify-start items-center w-[70%] gap-x-7  [@media(min-width:320px)_and_(max-width:767px)]:w-[50%]  [@media(min-width:320px)_and_(max-width:767px)]:text-[10px] ">
+                 <a class=" [@media(min-width:320px)_and_(max-width:767px)]:hidden" href="/listings"><i class="fa-regular fa-compass text-[40px] text-pink-600 "></i></a>
                
                 <a href="/listings">Explore</a>
                 <form class="border rounded-lg w-[40%] flex justify-between" method="POST" action="/listings/search">
@@ -12,7 +12,7 @@
                 
                </div>
                
-                 <div class="flex items-center justify-evenly w-[30%] ">
+                 <div class="flex items-center justify-evenly w-[30%]  [@media(min-width:320px)_and_(max-width:767px)]:w-[50%] [@media(min-width:320px)_and_(max-width:767px)]:text-[10px]">
                   <%if(!currUser){%>
                 <a href="/listings/new">Airbnb your home</a>
                 <a href="/signup">Signup</a>
@@ -25,6 +25,7 @@
              </div>
               <div class="mt-20 px-4">
     <!-- Your page content here -->
+     </div>
 
 
 

@@ -1,21 +1,10 @@
-const mongoose = require("mongoose");
-const Listing = require("../models/listing.js");
-const initData = require("./data.js");
+const Listing =require("../models/listing.js");
+const mongoose = require('mongoose');
+const initData =require("./data.js");
+const path = require('path');
+require('dotenv').config({ path: path.resolve(__dirname, '../.env') });
 
-require("dotenv").config({ path: "./.env" }); // Load env vars
-
-console.log(process.env.GAPI); // should print the string
-console.log("Type:", typeof process.env.DATABASE_URL); // should be "string"
-/*main()
-.then(()=>{
-    console.log("DB connected successfully");
-})
-.catch((err)=>{
-    console.log("Error in connecting the database");
-    console.error(err);
-});
-
-
+MONGODB_URL=process.env.DATABASE_URL;
    async function main(){
      await mongoose.connect(MONGODB_URL);
     await  initDB();
@@ -23,9 +12,15 @@ console.log("Type:", typeof process.env.DATABASE_URL); // should be "string"
 
    const initDB= async ()=>{
     await Listing.deleteMany({});
-      initData.data=initData.data.map((obj)=>({...obj,owner:'688f145c0b1b195f0db9133a'}));
+      initData.data=initData.data.map((obj)=>({...obj,owner:'68919ddb476a88a8107ea106'}));
     await Listing.insertMany(initData.data);
     console.log("data is initialised");
    };
 
-*/
+main()
+.then(()=>{
+  console.log("Database connected successfully");
+})
+.catch((err)=>{
+  console.error(err);
+});

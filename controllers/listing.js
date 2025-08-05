@@ -83,7 +83,7 @@ module.exports.del=async (req,res)=>{
 module.exports.index=async (req,res)=>{
                  
         const allListings=await Listing.find({});
-          console.log(allListings);
+       
         res.render("listings/index.ejs",{allListings});
 
  }

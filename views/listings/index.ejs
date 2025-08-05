@@ -5,57 +5,57 @@
 
 <body>
     
-         <div class="flex justify-evenly py-2 ">
+         <div class="flex justify-evenly py-2 [@media(min-width:320px)_and_(max-width:767px)]:flex-wrap ">
           <a href="/listings/category?type=Trending">
-            <div class=" opacity-60 hover:opacity-100 transition flex flex-col justify-center items-center">
+            <div class=" opacity-60 hover:opacity-100 transition flex flex-col justify-center items-center [@media(min-width:320px)_and_(max-width:767px)]:p-2">
               <div><i class="fa-solid fa-fire"></i></div>
               <p>Trending</p>
              </div>
           </a>
           <a href="/listings/category?type=Rooms">
-            <div class=" opacity-60 hover:opacity-100 transition flex flex-col justify-center items-center">
+            <div class=" opacity-60 hover:opacity-100 transition flex flex-col justify-center items-center  [@media(min-width:320px)_and_(max-width:767px)]:p-2">
                  <div><i class="fa-solid fa-bed"></i></div>
               <p>Rooms</p>
              </div>
           </a>
           <a href="/listings/category?type=Iconic Cities">
-             <div class=" opacity-60 hover:opacity-100 transition flex flex-col justify-center items-center">
+             <div class=" opacity-60 hover:opacity-100 transition flex flex-col justify-center items-center  [@media(min-width:320px)_and_(max-width:767px)]:p-2">
                  <div><i class="fa-solid fa-mountain-city"></i></div>
               <p>Iconic Cities</p>
              </div>
           </a>
           <a href="/listings/category?type=Mountains">
-            <div class=" opacity-60 hover:opacity-100 transition flex flex-col justify-center items-center">
+            <div class=" opacity-60 hover:opacity-100 transition flex flex-col justify-center items-center  [@media(min-width:320px)_and_(max-width:767px)]:p-2">
                 <div><i class="fa-solid fa-mountain"></i></div>
               <p>Mountains</p>
              </div>
           </a>
           <a href="/listings/category?type=Castle">
-               <div class=" opacity-60 hover:opacity-100 transition flex flex-col justify-center items-center">
+               <div class=" opacity-60 hover:opacity-100 transition flex flex-col justify-center items-center  [@media(min-width:320px)_and_(max-width:767px)]:p-2">
                 <div><i class="fa-brands fa-fort-awesome"></i></div>
                   <p>Castle</p>
               </div>
           </a>
           <a href="/listings/category?type=Amazing Pools">
-                <div class=" opacity-60 hover:opacity-100 transition flex flex-col justify-center items-center">
+                <div class=" opacity-60 hover:opacity-100 transition flex flex-col justify-center items-center  [@media(min-width:320px)_and_(max-width:767px)]:p-2">
                  <div><i class="fa-solid fa-person-swimming"></i></div>
               <p>Amazing Pools</p>
              </div>
           </a>
           <a href="/listings/category?type=Camping">
-            <div class=" opacity-60 hover:opacity-100 transition flex flex-col justify-center items-center">
+            <div class=" opacity-60 hover:opacity-100 transition flex flex-col justify-center items-center  [@media(min-width:320px)_and_(max-width:767px)]:p-2">
                  <div><i class="fa-solid fa-campground"></i></div>
               <p>Camping</p>
              </div>
           </a>
           <a href="/listings/category?type=Farms">
-            <div class=" opacity-60 hover:opacity-100 transition flex flex-col justify-center items-center">
+            <div class=" opacity-60 hover:opacity-100 transition flex flex-col justify-center items-center  [@media(min-width:320px)_and_(max-width:767px)]:p-2">
                  <div><i class="fa-solid fa-tractor"></i></div>
               <p>Farms</p>
              </div>
           </a>
           <a href="/listings/category?type=Arctic">
-            <div class=" opacity-60 hover:opacity-100 transition flex flex-col justify-center items-center">
+            <div class=" opacity-60 hover:opacity-100 transition flex flex-col justify-center items-center  [@media(min-width:320px)_and_(max-width:767px)]:p-2">
                  <div><i class="fa-solid fa-snowflake"></i></div>
               <p>Arctic</p>
              </div>
@@ -71,11 +71,11 @@
               
               
          </div>
-         <div class="w-full flex flex-wrap justify-center gap-6 ">
+         <div class=" lg:w-[full]  flex flex-wrap justify-center  gap-6 ">
                           <% for (let listing of allListings){%>
-                       <a class="rounded-lg m-2 w-[20%]  " href="/listings/<%=listing._id%>">
+                       <a class="rounded-lg m-2 [@media(min-width:320px)_and_(max-width:767px)]:w-[100%]   md:w-[25%] lg:w-[20%] " href="/listings/<%=listing._id%>">
                             <div >
-                   <img  class="w-full h-[16rem] rounded-lg hover:bg-transparent hover:opacity-50 hover:transition hover:duration-100" src=<%=listing.image.url%> alt="">
+                   <img  class="w-full   h-[16rem] rounded-lg hover:bg-transparent hover:opacity-50 hover:transition hover:duration-100" src=<%=listing.image.url%> alt="">
                    <div class="p-2">
                      <p><%=listing.title%></p>
                      <p class="font-medium"> &#8377; <%=listing.price.toLocaleString("en-IN")%>/night</p>

@@ -2,8 +2,8 @@
 <%-layout("layouts/boilerplate")%>
 <body >
    
-             <h1 class="font-medium  text-[30px] pl-3 pt-3">Listing Details:</h1>
-        <div class=" flex flex-col justify-center pl-20 py-4 gap-y-2 font-medium" >
+             <h1 class="font-medium  text-[30px] pl-3 [@media(min-width:320px)_and_(max-width:767px)]:pl-2 pt-3  ">Listing Details:</h1>
+        <div class=" flex flex-col justify-center  pl-20 [@media(min-width:320px)_and_(max-width:767px)]:pl-2 py-4 gap-y-2 font-medium" >
               <p class="text-[20px]"><%=listing.title%></p>
                
               <img  class="w-[400px] h-[275px] rounded-lg hover:bg-transparent hover:opacity-50 hover:transition hover:duration-100" src="<%=listing.image.url%>" alt="">
@@ -16,7 +16,7 @@
         </div>
         <br/>
         <%if(currUser && currUser._id.equals(listing.owner._id)){%>
-        <div  class="flex gap-x-4 pl-20 pb-4">
+        <div  class="flex gap-x-4 pl-20 [@media(min-width:320px)_and_(max-width:767px)]:pl-2 pb-4">
               <a  class="bg-red-600 text-white px-4 py-2 rounded inline-block" href="/listings/<%=listing._id%>/edit">  Edit</a>
          <form action="/listings/<%=listing._id%>?_method=DELETE"  method="POST">
             <button class="bg-black text-white px-4 py-2 rounded ">  Delete</button>
@@ -24,7 +24,7 @@
         </div>
         <%}%>
             <hr>
-        <div class="flex flex-col justify-center pl-20 py-4  font-medium w-full">
+        <div class="flex flex-col justify-center pl-20 [@media(min-width:320px)_and_(max-width:767px)]:pl-2 py-4  font-medium w-full">
             <%if(currUser){%>
       <h4 class="m-2">Leave a Review</h4>
       <form action="/listings/<%=listing._id%>/reviews" method="POST">
@@ -59,7 +59,7 @@
       <h4 class="m-4">All Reviews</h4>
       <div class="flex flex-wrap gap-4 ">
            <%for(let review of listing.reviews){%>
-            <div class=" flex flex-col justify-center pl-10 py-4 gap-y-2 font-medium border w-[45%] rounded-lg " >
+            <div class=" flex flex-col justify-center  pl-10 [@media(min-width:320px)_and_(max-width:767px)]:pl-2 py-4 gap-y-2 font-medium border w-[45%] rounded-lg [@media(min-width:320px)_and_(max-width:767px)]:w-[100%] [@media(min-width:320px)_and_(max-width:767px)]:pl-2" >
                    <p>@<%=review.author.username%></p>
                   <p><%=review.rating%> stars</p>
                    <p class="starability-result" data-rating="3"></p>

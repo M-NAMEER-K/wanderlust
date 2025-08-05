@@ -15,22 +15,17 @@ const User=require("./models/user.js");
 const passport=require("passport");
 const LocalStrategy=require("passport-local");
 const Listing =require("./models/listing.js");
-const initData=require("./init/data.js");
+
 if(process.env.NODE_ENV!="production"){
-require("dotenv").config();}
+require("dotenv").config();   }
 
 MONGODB_URL=process.env.DATABASE_URL;
    async function main(){
      await mongoose.connect(MONGODB_URL);
-    await  initDB();
+    
    }
 
-   const initDB= async ()=>{
-    await Listing.deleteMany({});
-      initData.data=initData.data.map((obj)=>({...obj,owner:'68919ddb476a88a8107ea106'}));
-    await Listing.insertMany(initData.data);
-    console.log("data is initialised");
-   };
+  
 
 main()
 .then(()=>{
