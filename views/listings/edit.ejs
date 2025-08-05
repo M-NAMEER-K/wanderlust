@@ -1,0 +1,62 @@
+
+
+
+
+<%-layout("layouts/boilerplate")%>
+
+<body>
+            <h1 class="font-medium  text-[30px] pl-3 pt-3">Edit your Listing</h1>
+              <form class=" flex flex-col justify-center pl-20 py-4 gap-y-2 font-medium "  enctype="multipart/form-data"
+                 action="/listings/<%=listing._id%>?_method=PUT" method="POST">
+                        
+
+                <div>
+                    <label for="name">Title</label><br/>
+                     <input class="border w-[50%] rounded-lg p-2"
+                      type="text" placeholder="Enter title" name="title" value=<%=listing.title%>><br/>
+                </div>
+                <div>
+                    <label for="description">Description</label><br/>
+                     <textarea class="border w-[50%] rounded-lg p-2"
+                      type="text" placeholder="Enter description" name="description" ><%=listing.description%></textarea><br/>
+                </div>
+                <div>
+                  Original Image Listing <br/>
+                  <img  class="w-[400px] h-[275px] rounded-lg hover:bg-transparent hover:opacity-50 hover:transition hover:duration-100" src="<%=originalImageUrl%>" alt="">
+               </div>
+                <div>
+                    <label for="image">Image</label><br/>
+                     <input class="border w-[50%] rounded-lg p-2"
+                      type="file" name="image"><br/>
+
+                </div>
+                <div>
+                      <label for="price">Price</label><br/>
+                      <input class="border w-[50%] rounded-lg p-2" 
+                      type="number" placeholder="Enter price" name="price" value=<%=listing.price%>><br/>
+                </div>
+                <div>
+                    <label for="location">Location</label><br/>
+                     <input class="border w-[50%] rounded-lg p-2"
+                      type="text" placeholder="Enter location" name="location" value=<%=listing.location%>><br/>
+                </div>
+                <div>
+                    <label for="country">Country</label><br/>
+                    <input class="border w-[50%] rounded-lg p-2" 
+                    type="text" placeholder="Enter country" name="country" value=<%=listing.country%>><br/>
+                </div>
+                <div class="w-[50%] flex justify-end">
+                    <button  class="bg-red-600 text-white px-4 py-2 rounded " type="submit">Create</button>
+                </div>
+             
+             
+             
+             
+             
+              
+              
+        </form>
+
+                       
+</body>
+

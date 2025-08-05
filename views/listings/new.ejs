@@ -1,0 +1,50 @@
+
+
+
+
+<%-layout("layouts/boilerplate")%>
+<body>
+   
+            <h1 class="font-medium  text-[30px] pl-3 pt-3">Create a New Listing</h1>
+        <form method="POST" action="/listings" class=" flex flex-col justify-center pl-20 py-4 gap-y-2 font-medium" enctype="multipart/form-data">
+            <div >
+                <label for="title">Title</label><br/>
+                              <input class="border w-[50%] rounded-lg p-2" type="text" placeholder="Enter title" name="title" required><br/>
+                              
+
+            </div>
+            <div  >
+                <label for="description">Description</label><br/>
+                  <textarea  class=" flex items-center border w-[50%] rounded-lg p-2" type="text" placeholder="Enter description" name="description" required></textarea><br/>
+            </div>
+            <div >
+                <label for="image">Image</label><br/>
+                 <input  class="border w-[50%] rounded-lg p-2" type="file"  name="image"><br/>
+            </div>
+            <div >
+                 <label for="price">Price</label><br/>
+                 <input class="border w-[50%] rounded-lg p-2" type="number" placeholder="Enter price" name="price" required><br/>
+            </div>
+            <div >
+                 <label for="location">Location</label><br/>
+                <input class="border w-[50%] rounded-lg p-2" type="text" placeholder="Enter location" name="location" required><br/>
+            </div>
+               <div >
+                <label for="country">Country</label><br/>
+                 <input class="border w-[50%] rounded-lg p-2" type="text" placeholder="Enter country" name="country" required><br/>
+               </div>
+             
+             
+              
+             
+            <div class="w-[50%] flex justify-end">
+             <button class="bg-red-600 text-white px-4 py-2 rounded " type="submit">
+                         Add
+                       </button>
+                    </div>
+
+        </form>
+
+                  
+</body>
+</html>
